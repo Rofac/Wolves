@@ -12,7 +12,7 @@ const CONFIG_INICIAL = {
   niveles: ['Principiante', 'Intermedio', 'Avanzado'],
   medios: ['Efectivo', 'Transferencia', 'Mercado Pago', 'Débito', 'Crédito'],
   categorias_gasto: ['Alquiler', 'Luz', 'Internet', 'Sueldos', 'Equipamiento', 'Limpieza', 'Otros'],
-  aviso_copia_dias: 7, ultima_copia: '', tema: '', pin: '', licencia: '',
+  aviso_copia_dias: 7, ultima_copia: '', tema: 'light', letra: 'normal', pin: '', licencia: '',
   msg_vencida: 'Hola {nombre}! Te recordamos que tu cuota de {gym} venció el {vence}. ¡Te esperamos!',
 };
 

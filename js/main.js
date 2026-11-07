@@ -1,9 +1,11 @@
 /* Arranque de la app. */
 'use strict';
 
+const TAMANIOS = { chica: .88, normal: 1 };
 function aplicarTema() {
-  const t = DB.cfg.tema || '';
-  if (t) document.documentElement.dataset.theme = t;
+  document.documentElement.style.zoom = TAMANIOS[DB.cfg.letra || 'normal'] || 1;
+  const t = DB.cfg.tema || 'light';
+  if (t !== 'auto') document.documentElement.dataset.theme = t;
   else document.documentElement.dataset.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 async function arrancarLicencia() {
@@ -18,6 +20,16 @@ async function arrancarLicencia() {
   return lic;
 }
 
+/* botón "Instalar app": Chrome avisa cuando se puede instalar y todavía no está instalada */
+let PEDIDO_INSTALAR = null;
+const instalada = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); PEDIDO_INSTALAR = e; if (!instalada()) $('#btnInstalar').hidden = false; });
+window.addEventListener('appinstalled', () => { PEDIDO_INSTALAR = null; $('#btnInstalar').hidden = true; toast('¡Listo! Ya tenés el ícono de Wolves en la pantalla'); });
+function instalarApp() {
+  if (PEDIDO_INSTALAR) { PEDIDO_INSTALAR.prompt(); PEDIDO_INSTALAR.userChoice.finally(() => { PEDIDO_INSTALAR = null; $('#btnInstalar').hidden = true; }); return; }
+  ayudaInstalar();
+}
+
 (async () => {
   try {
     await DB.abrir();
@@ -28,6 +40,7 @@ async function arrancarLicencia() {
     DB.copiaDiaria();
     if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {});
     $('#btnCobrar').onclick = () => cobrar(null, recargar);
+    $('#btnInstalar').onclick = instalarApp;
     $('#btnAtras').onclick = () => { const [id, args] = PILA.pop() || ['inicio', null]; ACTUAL = null; ir(id, args, false).then(() => { $('#btnAtras').hidden = !PILA.length; }); };
     await ir('inicio');
     pedirAceptarTerminos();

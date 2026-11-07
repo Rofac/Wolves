@@ -79,7 +79,8 @@ PANTALLAS.config = async (main) => {
       <button class="btn pri" id="cfLic" style="margin-top:10px">Activar</button></div>
 
     <div class="card"><h2>${ico('config')} Apariencia y ayuda</h2><div class="fila">
-      <div class="seg" id="cfTema">${[['', 'Automático'], ['light', 'Claro'], ['dark', 'Oscuro']].map(([k, t]) => `<button data-tm="${k}" class="${(c.tema || '') === k ? 'act' : ''}">${t}</button>`).join('')}</div>
+      <div><label>Colores</label><div class="seg" id="cfTema">${[['light', 'Claro'], ['dark', 'Oscuro'], ['auto', 'Como el celular']].map(([k, t]) => `<button data-tm="${k}" class="${(c.tema || 'light') === k ? 'act' : ''}">${t}</button>`).join('')}</div></div>
+      <div><label>Tamaño de letra</label><div class="seg" id="cfLetra">${[['chica', 'Chica'], ['normal', 'Normal']].map(([k, t]) => `<button data-lt="${k}" class="${(c.letra || 'normal') === k ? 'act' : ''}">${t}</button>`).join('')}</div></div>
       <button class="btn" id="cfAct">${ico('reloj')} Registro de actividad</button><button class="btn" id="cfInst">Cómo instalar la app</button></div></div>
     <div class="card"><h2>Acerca de</h2><div class="fila"><div class="sp"><b style="font-size:18px">RoFac</b><div class="muted chico">Versión 1.0</div></div>
       <button class="btn" id="cfLegal">Términos y privacidad</button></div></div>`;
@@ -103,6 +104,7 @@ PANTALLAS.config = async (main) => {
   $('#cfEqW').onclick = () => abrirWa('', `Hola! Te paso el código de la tablet para la licencia de ${DB.cfg.nombre}: ${lic.equipo}`);
   $('#cfLic').onclick = async () => { const k = $('#cf_lic').value.replace(/\s/g, ''); const r = await LIC.verificar(k, DB.cfg.nombre, lic.equipo);
     if (k && !r.activa) return toast(r.mensaje, true); await DB.setCfg('licencia', k, true); await DB.anotar('Licencia cargada'); toast(r.activa ? '¡Licencia activada!' : 'Licencia borrada'); await arrancarLicencia(); re(); };
+  $('#cfLetra').onclick = async e => { const b = e.target.closest('[data-lt]'); if (!b) return; await DB.setCfg('letra', b.dataset.lt, true); aplicarTema(); re(); };
   $('#cfTema').onclick = async e => { const b = e.target.closest('[data-tm]'); if (!b) return; await DB.setCfg('tema', b.dataset.tm, true); aplicarTema(); re(); };
   $('#cfAct').onclick = () => modal('Registro de actividad', `<table class="t">${DB.todos('actividad').slice(-300).reverse().map(a => `<tr><td class="chico muted" style="white-space:nowrap">${dmy(a.fecha)} ${a.fecha.slice(11)}</td><td><b>${esc(a.accion)}</b><div class="chico muted">${esc(a.detalle)}</div></td></tr>`).join('') || '<tr><td class="muted">Sin actividad</td></tr>'}</table>`, '', 'ancho');
   $('#cfInst').onclick = ayudaInstalar;
