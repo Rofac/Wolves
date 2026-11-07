@@ -1,5 +1,5 @@
 /* Guarda la app en la tablet para que abra sin internet. Al cambiar VERSION se actualiza. */
-const VERSION = 'cal-1.0.1';
+const VERSION = 'cal-1.0.3';
 const ARCHIVOS = ['./', 'index.html', 'manifest.webmanifest', 'css/app.css',
   'js/util.js', 'js/db.js', 'js/lic.js', 'js/ui.js', 'js/negocio.js', 'js/inicio.js', 'js/alumnos.js', 'js/caja.js', 'js/clases.js', 'js/progreso.js', 'js/config.js', 'js/legal.js', 'js/main.js',
   'img/logo.png', 'img/escudo.png', 'img/favicon.png', 'img/icono-192.png', 'img/icono-512.png', 'img/icono-maskable.png', 'img/apple-touch-icon.png'];
