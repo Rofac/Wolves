@@ -1,0 +1,36 @@
+WOLVES CALISTHENICS · Guía rápida
+=================================
+
+PRIMEROS PASOS
+1. Configuración: el nombre del gimnasio y el PRECIO de la cuota (tocá "Cuota mensual").
+   Podés agregar otras cuotas (ej. "3 veces por semana", "Trimestral", "Pase 7 días").
+2. Clases > "+ Clase": nombre, días, hora y cupo (cuántos entran). Ej. Principiantes · lun-mié-vie · 18:00 · 12.
+3. Alumnos > "+ Alumno". En su ficha, "Horarios y datos": tocá los horarios a los que viene.
+
+TODOS LOS DÍAS
+- COBRAR: botón naranja "$ Cobrar" arriba (o en la ficha del alumno). Si paga con dos medios:
+  "+ Pagar con otro medio". Si queda debiendo: medio "Debe (cuenta corriente)". El recibo se manda por WhatsApp.
+- ASISTENCIA: en Inicio o Clases tocá la clase. Tocá a cada uno que vino.
+  La X = avisó que no viene (su lugar queda libre). "Agregar alumno" = clase suelta o recuperación.
+- INICIO muestra las clases de hoy, las cuotas vencidas (con botón para recordar por WhatsApp) y los cumpleaños.
+
+PROGRESO DE CALISTENIA
+- En la ficha del alumno, "Progreso": tocá el paso que logró (ej. Dominadas > "5 dominadas").
+  Te ofrece mandarle la felicitación por WhatsApp.
+- "Pruebas": cada tanto (ej. una vez por mes) cargá sus marcas. Se ve si mejoró y su mejor marca.
+- Calistenia > "Día de pruebas": cargás una prueba a todos de una.
+- Calistenia > Ranking y Rutinas por nivel (se mandan por WhatsApp).
+
+CAJA
+- Hoy, semana, mes, año o las fechas que quieras. Por medio de pago y día por día.
+- Gastos (alquiler, luz, equipamiento), retiros y otros ingresos (ej. venta de agua).
+- Si un cobro se cargó mal: tocalo > Anular (con el motivo). Vuelve la fecha de vencimiento que tenía.
+
+CLAVE DEL DUEÑO (opcional)
+- Configuración > Clave del dueño. Pide la clave para entrar a la Caja, a la Configuración y para anular cobros.
+
+COPIA DE SEGURIDAD · MUY IMPORTANTE
+- Todo queda guardado EN ESTA TABLET. Si se rompe o la resetean sin copia, se pierde todo.
+- Una vez por semana: Configuración > "Hacer copia" y mandala a tu Google Drive o a tu WhatsApp.
+- Para recuperar: Configuración > "Restaurar una copia" y elegí el archivo.
+- No borres los datos de Chrome ni desinstales la app sin hacer la copia antes.

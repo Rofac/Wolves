@@ -1,0 +1,17 @@
+{
+  "name": "Wolves Calisthenics",
+  "short_name": "Wolves",
+  "description": "Alumnos, cuotas, clases con cupo y progreso de calistenia",
+  "lang": "es-AR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b0b0d",
+  "theme_color": "#0b0b0d",
+  "icons": [
+    { "src": "img/icono-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "img/icono-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "img/icono-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

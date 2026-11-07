@@ -1,0 +1,76 @@
+WOLVES CALISTHENICS · Sistema de gestión para tablet o celular (RoFac v1.0)
+==========================================================================
+
+QUÉ ES
+Una app que se abre en Chrome de la tablet (o del celular) y queda instalada con el ícono de Wolves.
+Funciona SIN INTERNET. Los datos quedan guardados en la tablet (no en internet).
+No necesita computadora.
+
+QUÉ TIENE
+- Alumnos: ficha con foto, teléfono, nivel, apto médico, contacto de emergencia, horarios fijos.
+- Cuotas: cobrar con uno o varios medios (ej. parte efectivo y parte transferencia), descuento,
+  "debe" (cuenta corriente), recibo por WhatsApp, anular con motivo (vuelve la fecha de vencimiento).
+- Avisos: cuotas vencidas y por vencer con botón para recordar por WhatsApp, cumpleaños, quién debe.
+- Clases por horario y CUPO: cada clase con días, hora y cantidad de lugares. Lista del día para
+  marcar quién vino, "avisó que no viene" (libera el lugar) y clase suelta / recuperación.
+- Calistenia: habilidades con su progresión (dominadas, muscle-up, front lever, planche, parada de
+  manos, etc.), se marca cada paso que logra el alumno (y se le puede mandar la felicitación).
+  Pruebas cada tanto (dominadas máximas, plancha, etc.) con la evolución y la mejor marca.
+  "Día de pruebas" para cargar una prueba a todos de una vez. Ranking. Rutinas por nivel para mandar por WhatsApp.
+- Caja: hoy, ayer, semana, mes, mes anterior, año o fechas a elección. Por medio de pago, día por día,
+  gastos, retiros y otros ingresos.
+- Clave del dueño (opcional): pide clave para la Caja, la Configuración y para anular cobros.
+  Así los profes usan la tablet para la asistencia sin ver la plata.
+- Copia de seguridad: a Google Drive o WhatsApp. Avisa si pasan días sin hacerla.
+  Además guarda sola una copia por día adentro de la tablet (las últimas 5).
+
+----------------------------------------------------------------------------------------------
+PARA RODRIGO Y FACUNDO: CÓMO PUBLICARLA (una sola vez, gratis, con GitHub Pages)
+----------------------------------------------------------------------------------------------
+La app tiene que estar en una dirección de internet segura (https) para poder instalarse en la tablet.
+Después de instalada ya no necesita internet.
+
+1. Entrar a https://github.com y crear una cuenta gratis (si no tienen).
+2. Arriba a la derecha "+" > "New repository". Nombre: wolves (o el que quieran). Marcar "Public". "Create repository".
+3. En la página del repositorio: "uploading an existing file" (o "Add file" > "Upload files").
+   Arrastrar TODO lo que está ADENTRO de la carpeta "calistenia" (index.html, sw.js, manifest.webmanifest,
+   y las carpetas css, js, img). Abajo tocar "Commit changes".
+4. "Settings" > "Pages" (menú de la izquierda). En "Branch" elegir "main" y "/ (root)" > "Save".
+5. Esperar 1 o 2 minutos. Arriba en esa misma página aparece la dirección, por ejemplo:
+      https://rofac.github.io/wolves/
+   Esa es la dirección de la app.
+
+EN LA TABLET DEL GIMNASIO
+1. Abrir Chrome y entrar a la dirección.
+2. Menú ⋮ (arriba a la derecha) > "Instalar aplicación" (o "Agregar a la pantalla principal").
+3. Queda el ícono de Wolves. Abrirla siempre desde ese ícono.
+4. Configuración: nombre del gimnasio, precio de la cuota, y si quieren la clave del dueño.
+5. Clases: cargar los horarios con su cupo. Después los alumnos, y anotarlos en sus horarios (en su ficha).
+
+LICENCIA (igual que los otros programas)
+- Al abrirla por primera vez, el cliente tiene que aceptar los Términos de uso y el Aviso de privacidad
+  (quedan para leer en Configuración > Acerca de > Términos y privacidad).
+- Tiene 30 días de prueba. Después queda en sólo lectura hasta que se carga la licencia.
+- El cliente ve el "Código de esta tablet" en Configuración > Licencia (tiene botón para mandarlo por WhatsApp).
+- Con generar_licencia_apps.py (el PRIVADO de las APPS, nunca se entrega; es otro distinto al de Windows): opción 1 = Calistenia.
+  El nombre tiene que ser IGUAL al de Configuración (ej. "Wolves Calisthenics").
+- Si cambia de tablet: instalar la app en la nueva, restaurar la copia y pedir una licencia nueva
+  para el código de la tablet nueva (la licencia no pasa con la copia).
+- Si el dueño se olvida la clave: toca "Me olvidé la clave", te manda el código (CAL-XXXX-XXXX),
+  y con generar_licencia_apps.py opción 9 se genera el código de desbloqueo.
+
+ACTUALIZAR LA APP (cuando haya una versión nueva)
+- Subir los archivos nuevos al mismo repositorio de GitHub (Add file > Upload files, reemplazan a los viejos).
+- La tablet se actualiza sola la próxima vez que abra la app con internet (puede hacer falta cerrarla y abrirla dos veces).
+- Los datos del gimnasio NO se tocan (están en la tablet, no en GitHub).
+
+MUY IMPORTANTE PARA EL CLIENTE
+- Los datos están en la tablet. Si la resetean, borran los datos de Chrome o desinstalan la app SIN COPIA,
+  se pierde todo. Hacer la copia de seguridad una vez por semana (la app avisa).
+- No usar la app en modo incógnito.
+- Para usar otra tablet o celular con los mismos datos: hacer la copia en una y restaurarla en la otra
+  (no se sincronizan solas: cada equipo tiene sus datos).
+
+OTRO GIMNASIO DE CALISTENIA
+Es la misma app: cambiar el logo (carpeta img: logo.png, escudo.png, favicon.png, icono-*.png) y el nombre
+en manifest.webmanifest e index.html, y publicarla en otro repositorio.
